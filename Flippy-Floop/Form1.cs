@@ -6,5 +6,20 @@ namespace Flippy_Floop
         {
             InitializeComponent();
         }
+
+        private void GameTimerEvent(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
