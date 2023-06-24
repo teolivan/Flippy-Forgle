@@ -34,7 +34,7 @@
             this.pipebottom = new System.Windows.Forms.PictureBox();
             this.ground = new System.Windows.Forms.PictureBox();
             this.scoretxt = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pipetop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.forgle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipebottom)).BeginInit();
@@ -43,10 +43,11 @@
             // 
             // pipetop
             // 
+            this.pipetop.BackColor = System.Drawing.Color.Transparent;
             this.pipetop.Image = global::Flippy_Floop.Properties.Resources.pipeup_png;
-            this.pipetop.Location = new System.Drawing.Point(448, 2);
+            this.pipetop.Location = new System.Drawing.Point(448, -5);
             this.pipetop.Name = "pipetop";
-            this.pipetop.Size = new System.Drawing.Size(100, 241);
+            this.pipetop.Size = new System.Drawing.Size(100, 248);
             this.pipetop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipetop.TabIndex = 0;
             this.pipetop.TabStop = false;
@@ -63,8 +64,9 @@
             // 
             // pipebottom
             // 
+            this.pipebottom.BackColor = System.Drawing.Color.Transparent;
             this.pipebottom.Image = global::Flippy_Floop.Properties.Resources.pipedown_png;
-            this.pipebottom.Location = new System.Drawing.Point(448, 398);
+            this.pipebottom.Location = new System.Drawing.Point(448, 397);
             this.pipebottom.Name = "pipebottom";
             this.pipebottom.Size = new System.Drawing.Size(100, 226);
             this.pipebottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,10 +75,11 @@
             // 
             // ground
             // 
-            this.ground.Image = global::Flippy_Floop.Properties.Resources.sand_png;
-            this.ground.Location = new System.Drawing.Point(-10, 559);
+            this.ground.BackColor = System.Drawing.Color.Transparent;
+            this.ground.Image = global::Flippy_Floop.Properties.Resources.sand1;
+            this.ground.Location = new System.Drawing.Point(-11, 608);
             this.ground.Name = "ground";
-            this.ground.Size = new System.Drawing.Size(645, 118);
+            this.ground.Size = new System.Drawing.Size(645, 107);
             this.ground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ground.TabIndex = 3;
             this.ground.TabStop = false;
@@ -84,17 +87,18 @@
             // scoretxt
             // 
             this.scoretxt.AutoSize = true;
-            this.scoretxt.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.scoretxt.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.scoretxt.Location = new System.Drawing.Point(21, 19);
             this.scoretxt.Name = "scoretxt";
-            this.scoretxt.Size = new System.Drawing.Size(97, 19);
+            this.scoretxt.Size = new System.Drawing.Size(132, 27);
             this.scoretxt.TabIndex = 4;
             this.scoretxt.Text = "Score: 0";
             // 
-            // timer1
+            // gameTimer
             // 
-            this.timer1.Interval = 20;
-            this.timer1.Tick += new System.EventHandler(this.GameTimerEvent);
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 20;
+            this.gameTimer.Tick += new System.EventHandler(this.GameTimerEvent);
             // 
             // Form1
             // 
@@ -102,15 +106,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(626, 676);
+            this.Controls.Add(this.ground);
             this.Controls.Add(this.scoretxt);
+            this.Controls.Add(this.pipebottom);
             this.Controls.Add(this.forgle);
             this.Controls.Add(this.pipetop);
-            this.Controls.Add(this.pipebottom);
-            this.Controls.Add(this.ground);
             this.Name = "Form1";
             this.Text = "Flippy Floop";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.pipetop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.forgle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipebottom)).EndInit();
@@ -127,6 +131,6 @@
         private PictureBox pipebottom;
         private PictureBox ground;
         private Label scoretxt;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }

@@ -93,9 +93,29 @@ namespace Flippy_Floop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sand {
+            get {
+                object obj = ResourceManager.GetObject("sand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sand_png {
             get {
                 object obj = ResourceManager.GetObject("sand.png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sand1 {
+            get {
+                object obj = ResourceManager.GetObject("sand1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
