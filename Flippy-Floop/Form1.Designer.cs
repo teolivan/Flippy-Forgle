@@ -112,7 +112,7 @@
             this.Controls.Add(this.forgle);
             this.Controls.Add(this.pipetop);
             this.Name = "Form1";
-            this.Text = "Flippy Floop";
+            this.Text = "Flippy Forgle";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.pipetop)).EndInit();
